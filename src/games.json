@@ -1,0 +1,170 @@
+[
+  {
+    "id": "sudoku-builtin",
+    "title": "Built-in Sudoku",
+    "thumbnail": "https://picsum.photos/seed/sudoku-builtin/400/300",
+    "type": "builtin",
+    "category": "Puzzle",
+    "isHot": true
+  },
+  {
+    "id": "tetris-builtin",
+    "title": "Built-in Tetris",
+    "thumbnail": "https://picsum.photos/seed/tetris-builtin/400/300",
+    "type": "builtin",
+    "category": "Classic",
+    "isHot": true
+  },
+  {
+    "id": "dino-builtin",
+    "title": "Built-in Dino",
+    "thumbnail": "https://picsum.photos/seed/dino-builtin/400/300",
+    "type": "builtin",
+    "category": "Classic",
+    "isHot": true
+  },
+  {
+    "id": "breakout-builtin",
+    "title": "Built-in Breakout",
+    "thumbnail": "https://picsum.photos/seed/breakout-builtin/400/300",
+    "type": "builtin",
+    "category": "Classic",
+    "isHot": false
+  },
+  {
+    "id": "minesweeper-builtin",
+    "title": "Built-in Minesweeper",
+    "thumbnail": "https://picsum.photos/seed/minesweeper-builtin/400/300",
+    "type": "builtin",
+    "category": "Classic",
+    "isHot": false
+  },
+  {
+    "id": "flappy-builtin",
+    "title": "Built-in Flappy",
+    "thumbnail": "https://picsum.photos/seed/flappy-builtin/400/300",
+    "type": "builtin",
+    "category": "Action",
+    "isHot": true
+  },
+  {
+    "id": "2048-builtin",
+    "title": "Built-in 2048",
+    "thumbnail": "https://picsum.photos/seed/2048-builtin/400/300",
+    "type": "builtin",
+    "category": "Puzzle",
+    "isHot": false
+  },
+  {
+    "id": "snake-builtin",
+    "title": "Built-in Snake",
+    "thumbnail": "https://picsum.photos/seed/snake-builtin/400/300",
+    "type": "builtin",
+    "category": "Classic",
+    "isHot": false
+  },
+  {
+    "id": "tetris",
+    "title": "Tetris",
+    "thumbnail": "https://picsum.photos/seed/tetris/400/300",
+    "iframeUrl": "aHR0cHM6Ly90ZXRyaXMuY29tL3BsYXktdGV0cmlz",
+    "category": "Classic",
+    "isHot": true
+  },
+  {
+    "id": "pacman",
+    "title": "Google Pac-Man",
+    "thumbnail": "https://picsum.photos/seed/pacman/400/300",
+    "iframeUrl": "aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS9sb2dvcy8yMDEwL3BhY21hbjEwLWkuaHRtbA==",
+    "category": "Classic",
+    "isHot": false
+  },
+  {
+    "id": "slope",
+    "title": "Slope",
+    "thumbnail": "https://picsum.photos/seed/slope/400/300",
+    "iframeUrl": "aHR0cHM6Ly93d3cuc2lsdmVyZ2FtZXMuY29tL2VuL3Nsb3BlL2lmcmFtZQ==",
+    "category": "Action",
+    "isHot": true
+  },
+  {
+    "id": "minecraft",
+    "title": "Minecraft Classic",
+    "thumbnail": "https://picsum.photos/seed/minecraft/400/300",
+    "iframeUrl": "aHR0cHM6Ly9jbGFzc2ljLm1pbmVjcmFmdC5uZXQv",
+    "category": "Sandbox",
+    "isHot": true
+  },
+  {
+    "id": "paperio2",
+    "title": "Paper.io 2",
+    "thumbnail": "https://picsum.photos/seed/paperio2/400/300",
+    "iframeUrl": "aHR0cHM6Ly9wYXBlci1pby5jb20v",
+    "category": "Multiplayer",
+    "isHot": false
+  },
+  {
+    "id": "1v1lol",
+    "title": "1v1.LOL",
+    "thumbnail": "https://picsum.photos/seed/1v1lol/400/300",
+    "iframeUrl": "aHR0cHM6Ly8xdjEtbG9sLnBhZ2VzLmRldi8=",
+    "category": "Shooter",
+    "isHot": true
+  },
+  {
+    "id": "bitlife",
+    "title": "BitLife",
+    "thumbnail": "https://picsum.photos/seed/bitlife/400/300",
+    "iframeUrl": "aHR0cHM6Ly9iaXRsaWZlb25saW5lLmlvLw==",
+    "category": "Simulation",
+    "isHot": false
+  },
+  {
+    "id": "retrobowl",
+    "title": "Retro Bowl",
+    "thumbnail": "https://picsum.photos/seed/retrobowl/400/300",
+    "iframeUrl": "aHR0cHM6Ly9nYW1lMzEyLmdpdGh1Yi5pby9yZXRyby1ib3dsLw==",
+    "category": "Sports",
+    "isHot": true
+  },
+  {
+    "id": "cookieclicker",
+    "title": "Cookie Clicker",
+    "thumbnail": "https://picsum.photos/seed/cookie/400/300",
+    "iframeUrl": "aHR0cHM6Ly9vcnRlaWwuZGFzaG5ldC5vcmcvY29va2llY2xpY2tlci8=",
+    "category": "Idle",
+    "isHot": false
+  },
+  {
+    "id": "shellshockers",
+    "title": "Shell Shockers",
+    "thumbnail": "https://picsum.photos/seed/shellshockers/400/300",
+    "iframeUrl": "aHR0cHM6Ly9lZ2djb21iYXQuY29tLw==",
+    "category": "Shooter",
+    "isHot": true
+  },
+  {
+    "id": "krunker",
+    "title": "Krunker.io",
+    "thumbnail": "https://picsum.photos/seed/krunker/400/300",
+    "iframeUrl": "aHR0cHM6Ly9icm93c2VyZnBzLmNvbS8=",
+    "category": "Shooter",
+    "isHot": true
+  },
+  {
+    "id": "agario",
+    "title": "Agar.io",
+    "thumbnail": "https://picsum.photos/seed/agario/400/300",
+    "iframeUrl": "aHR0cHM6Ly9hZ2FyLmlvLw==",
+    "category": "Multiplayer",
+    "isHot": false
+  },
+  {
+    "id": "slitherio",
+    "title": "Slither.io",
+    "thumbnail": "https://picsum.photos/seed/slitherio/400/300",
+    "iframeUrl": "aHR0cHM6Ly9zbGl0aGVyLmlvLw==",
+    "category": "Multiplayer",
+    "isHot": false
+  }
+]
