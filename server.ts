@@ -37,7 +37,7 @@ async function startServer() {
       // Copy headers, excluding security/compression
       Object.keys(response.headers).forEach(key => {
         const lowerKey = key.toLowerCase();
-        if (!['content-security-policy', 'x-frame-options', 'content-encoding', 'transfer-encoding', 'strict-transport-security'].includes(lowerKey)) {
+        if (!['content-security-policy', 'x-frame-options', 'content-encoding', 'transfer-encoding', 'strict-transport-security', 'cross-origin-opener-policy', 'cross-origin-embedder-policy', 'cross-origin-resource-policy'].includes(lowerKey)) {
           res.set(key, response.headers[key]);
         }
       });
@@ -53,15 +53,19 @@ async function startServer() {
         let html = response.data.toString('utf8');
         const $ = cheerio.load(html);
 
+        // Strip integrity attributes which break when proxied
+        $('[integrity]').removeAttr('integrity');
+
         const rewrite = (selector: string, attr: string) => {
           $(selector).each((_, el) => {
             const val = $(el).attr(attr);
             if (val && !val.startsWith('data:') && !val.startsWith('javascript:') && !val.startsWith('#')) {
               try {
                 const absoluteUrl = new URL(val, targetUrl).href;
-                if (attr === 'href' && !val.match(/\.(png|jpg|jpeg|gif|css|js|svg|webp)$/i)) {
+                // Proxy HTML, CSS, and JS to keep them within the stealth environment
+                if (attr === 'href' && !val.match(/\.(png|jpg|jpeg|gif|svg|webp)$/i)) {
                   $(el).attr(attr, `/api/proxy?url=${encodeURIComponent(absoluteUrl)}`);
-                } else if (val.endsWith('.css')) {
+                } else if (val.match(/\.(css|js)$/i)) {
                   $(el).attr(attr, `/api/proxy?url=${encodeURIComponent(absoluteUrl)}`);
                 } else {
                   $(el).attr(attr, absoluteUrl);
@@ -97,6 +101,7 @@ async function startServer() {
         // Inject Stealth Script
         $('head').prepend(`
           <script>
+            // Intercept window.open
             const originalOpen = window.open;
             window.open = function(url, name, specs) {
               if (url && !url.startsWith(window.location.origin)) {
@@ -105,7 +110,34 @@ async function startServer() {
               }
               return originalOpen(url, name, specs);
             };
-            // Intercept fetch/XHR could go here for even better proxying
+
+            // Intercept fetch
+            const originalFetch = window.fetch;
+            window.fetch = function(input, init) {
+              let url = typeof input === 'string' ? input : input.url;
+              if (url && !url.startsWith(window.location.origin) && !url.startsWith('data:')) {
+                const absoluteUrl = new URL(url, "${targetUrl}").href;
+                const proxiedUrl = window.location.origin + '/api/proxy?url=' + encodeURIComponent(absoluteUrl);
+                if (typeof input === 'string') {
+                  return originalFetch(proxiedUrl, init);
+                } else {
+                  const newRequest = new Request(proxiedUrl, input);
+                  return originalFetch(newRequest, init);
+                }
+              }
+              return originalFetch(input, init);
+            };
+
+            // Intercept XHR
+            const originalXHR = window.XMLHttpRequest.prototype.open;
+            window.XMLHttpRequest.prototype.open = function(method, url, ...args) {
+              if (url && typeof url === 'string' && !url.startsWith(window.location.origin) && !url.startsWith('data:')) {
+                const absoluteUrl = new URL(url, "${targetUrl}").href;
+                const proxiedUrl = window.location.origin + '/api/proxy?url=' + encodeURIComponent(absoluteUrl);
+                return originalXHR.apply(this, [method, proxiedUrl, ...args]);
+              }
+              return originalXHR.apply(this, [method, url, ...args]);
+            };
           </script>
         `);
 
