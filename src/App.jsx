@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Gamepad2, X, Maximize2, Search, Play, ShieldCheck, Flame, Zap, LayoutGrid, Trophy, Clock, Dices, Globe, Share2, Copy, Check } from 'lucide-react';
+import { Gamepad2, X, Maximize2, Search, Play, ShieldCheck, Flame, Zap, LayoutGrid, Trophy, Clock, Dices, Globe, Share2, Copy, Check, BookOpen } from 'lucide-react';
 import gamesData from './games.json';
 import SnakeGame from './components/SnakeGame.jsx';
 import Game2048 from './components/Game2048.jsx';
