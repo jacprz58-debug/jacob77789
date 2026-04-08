@@ -1,5 +1,13 @@
 [
   {
+    "id": "chess-builtin",
+    "title": "Built-in Chess",
+    "thumbnail": "https://picsum.photos/seed/chess-builtin/400/300",
+    "type": "builtin",
+    "category": "Classic",
+    "isHot": false
+  },
+  {
     "id": "sudoku-builtin",
     "title": "Built-in Sudoku",
     "thumbnail": "https://picsum.photos/seed/sudoku-builtin/400/300",

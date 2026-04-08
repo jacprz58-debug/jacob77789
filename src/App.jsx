@@ -10,6 +10,7 @@ import BreakoutGame from './components/BreakoutGame.jsx';
 import MinesweeperGame from './components/MinesweeperGame.jsx';
 import SudokuGame from './components/SudokuGame.jsx';
 import TetrisGame from './components/TetrisGame.jsx';
+import ChessGame from './components/ChessGame.jsx';
 import EducationalCloak from './components/EducationalCloak.jsx';
 
 export default function App() {
@@ -241,6 +242,7 @@ export default function App() {
       if (game.id === 'minesweeper-builtin') return <MinesweeperGame />;
       if (game.id === 'sudoku-builtin') return <SudokuGame />;
       if (game.id === 'tetris-builtin') return <TetrisGame />;
+      if (game.id === 'chess-builtin') return <ChessGame />;
       return <div className="flex items-center justify-center h-full text-slate-500">Game coming soon...</div>;
     }
     return (
